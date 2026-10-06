@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HIS: Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="sidebar">
+
+    <h2>HIS</h2>
+    <a href="index.html" class="active">Dashboard</a>
+    <a href="alerts.html">Alerts</a>
+    <a href="hotspot.html">Hotspot Map</a>
+    <a href="forecast.html">Forecast Summary</a>
+    <a href="subscribe.html">Subscribe</a>
+    <a href="sources.html">Sources & Stakeholders</a>
+    <a href="about.html">About</a>
+
+</div>
+
+
+<div class="main">
+
+    <h1>Heatwave Intelligence System</h1>
+    <p class="muted">
+        An integrated predictive platform delivering real-time microclimate analytics and automated thermal surge warnings.
+    </p>
+    <hr>
+    <!-- LIVE THERMAL ANALYTICS & INDICATORS -->
+    <div class="section">
+        <h2>Live Thermal Analytics & Indicators</h2>
+        <div class="metrics-grid">
+            <div class="metric-card">
+                <div class="label">Max Surface Temp</div>
+                <div class="value">46.8 °C</div>
+                <div class="subtext">AWS-108 (Central Plain)</div>
+            </div>
+
+            <div class="metric-card">
+                <div class="label">Heat Index (RealFeel)</div>
+                <div class="value alert">51.2 °C</div>
+                <div class="subtext">High Humidity Spike</div>
+            </div>
+
+            <div class="metric-card">
+                <div class="label">Solar Irradiance</div>
+                <div class="value">1020 W/m²</div>
+                <div class="subtext">Peak Radiation Phase</div>
+            </div>
+
+            <div class="metric-card">
+                <div class="label">Primary Vulnerability Zone</div>
+                <div class="value" style="font-size: 1.25rem; line-height: 1.3;">Central Industrial District</div>
+                <div class="subtext alert">High Vulnerability Index</div>
+            </div>
+        </div>
+    </div>
+
+    <hr> 
+
+    <div class="section">
+        <h2>Region-wise Temperature</h2>
+        <p class="muted">
+            Current maximum temperature and alert level for each region.
+        </p>
+
+        <div class="tablewrap">
+            <table id="tbl">
+                <thead>
+                    <tr>
+                        <th class="sort" data-k="name">
+                            Region
+                        </th>
+
+                        <th class="sort" data-k="t">
+                            Today (°C)
+                        </th>
+
+                        <th>
+                            Alert Level
+                        </th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+
+
+    <hr>
+
+     <!-- TARGETED ACTION PROTOCOLS -->
+    <div class="section">
+        <h2>Targeted Action Protocols</h2>
+        <div class="protocols-grid">
+            <div class="protocol-card">
+                <h3>Disaster Officers & Emergency Teams</h3>
+                <p>Review predictive heat maps, coordinate emergency cooling center deployments, and issue district-wide warnings.</p>
+                <a href="forecast.html">Access Regional Forecast Table &rarr;</a>
+            </div>
+
+            <div class="protocol-card">
+                <h3>General Public & Local Communities</h3>
+                <p>Track local heatwave duration forecasts, view direct thermal risk guidance, and subscribe for immediate mobile alerts.</p>
+                <a href="subscribe.html">Register for Emergency Alerts &rarr;</a>
+            </div>
+        </div>
+    </div>
+
+    <hr>    
+
+    <p class="footer-text">
+        Heatwave Watch | Heatwave Monitoring & Early Warning System
+    </p>
+
+</div>
+
+<script src="data.js"></script>
+<script src="dashboard.js"></script>
+
+</body>
+
+</html>

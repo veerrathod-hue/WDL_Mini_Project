@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HIS: Forecast Summary</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .forecast-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-bottom: 50px;
+        }
+
+        .forecast-intro {
+            margin-bottom: 30px;
+            font-size: 1rem;
+            color: #64748b;
+        }
+
+        .forecast-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #0f172a;
+            font-size: 14px;
+        }
+
+        .forecast-select {
+            display: block;
+            width: 100%;
+            max-width: 360px;
+            padding: 11px 14px;
+            margin-bottom: 8px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            background-color: #ffffff;
+            color: #0f172a;
+            font-family: inherit;
+            font-size: 15px;
+            box-shadow: 0 1px 2px 0 rgba(15, 23, 42, 0.04);
+            transition: border-color 0.15s ease, box-shadow 0.15s ease;
+        }
+
+        .forecast-select:focus {
+            outline: none;
+            border-color: #6366f1;
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+        }
+
+        .forecast-legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 25px 0 30px;
+            padding: 16px 20px;
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            box-shadow: 0 1px 3px 0 rgba(15, 23, 42, 0.05);
+        }
+
+        .forecast-grid {
+            margin-bottom: 45px;
+        }
+
+        .forecast-container h2 {
+            margin-top: 10px;
+            margin-bottom: 16px;
+            font-size: 20px;
+            font-weight: 700;
+            color: #0f172a;
+        }
+
+        .forecast-summary {
+            min-height: 45px;
+            padding: 22px;
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            box-shadow: 0 1px 3px 0 rgba(15, 23, 42, 0.05);
+            margin-bottom: 30px;
+        }
+
+        .forecast-summary p {
+            margin-bottom: 8px;
+            color: #334155;
+            line-height: 1.6;
+        }
+
+        .forecast-summary p:last-child {
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <div class="sidebar">
+
+        <h2>HIS</h2>
+
+        <a href="index.html">Dashboard</a>
+        <a href="alerts.html">Alerts</a>
+        <a href="hotspot.html">Hotspot Map</a>
+        <a href="forecast.html" class="active">Forecast Summary</a>
+        <a href="subscribe.html">Subscribe</a>
+        <a href="sources.html">Sources &amp; Stakeholders</a>
+        <a href="about.html">About</a>
+
+    </div>
+
+
+    <div class="main">
+
+        <div class="forecast-container">
+
+            <h1>Forecast Summary</h1>
+
+            <p class="forecast-intro">
+                7 day forecasts for the selected regions
+            </p>
+
+
+            <!-- Region picker -->
+            <label
+                class="forecast-label"
+                for="region-select">
+                Select Region
+            </label>
+
+            <select
+                id="region-select"
+                class="forecast-select">
+            </select>
+
+            <p
+                id="region-covers"
+                class="forecast-covers">
+            </p>
+
+
+            <!-- Legend -->
+            <div class="forecast-legend">
+
+                <span class="forecast-pill level-normal">
+                    Normal
+                </span>
+
+                <span class="forecast-pill level-watch">
+                    Watch
+                </span>
+
+                <span class="forecast-pill level-warning">
+                    Warning
+                </span>
+
+                <span class="forecast-pill level-severe">
+                    Severe
+                </span>
+
+            </div>
+
+
+            <!-- Day cards -->
+            <div
+                id="forecast-grid"
+                class="forecast-grid"
+                aria-live="polite">
+            </div>
+
+
+            <!-- Summary -->
+            <h2>Summary</h2>
+
+            <div
+                id="forecast-summary"
+                class="forecast-summary"
+                aria-live="polite">
+            </div>
+
+        </div>
+
+        <hr>
+        <br>
+        <p class="alerts-footer">
+            Heatwave Watch | Heatwave Monitoring &amp; Early Warning System
+        </p>
+    </div>
+
+
+    <script src="forecast.js"></script>
+
+</body>
+
+</html>
